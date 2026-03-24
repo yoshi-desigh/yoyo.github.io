@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>広告分析ダッシュボード</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">WEEKLY REPORT</p>
+        <h1>広告分析ダッシュボード</h1>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Google</h2>
+        <p class="section-desc">Googleは売上ベースで入力</p>
+      </div>
+
+      <div class="channel-card">
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="gCost">広告費</label>
+            <input type="number" id="gCost" placeholder="例: 120000">
+          </div>
+          <div class="input-group">
+            <label for="gSales">売上</label>
+            <input type="number" id="gSales" placeholder="例: 850000">
+          </div>
+          <div class="input-group">
+            <label for="gClicks">クリック数</label>
+            <input type="number" id="gClicks" placeholder="例: 8200">
+          </div>
+          <div class="input-group">
+            <label for="gImp">imp</label>
+            <input type="number" id="gImp" placeholder="例: 165000">
+          </div>
+          <div class="input-group">
+            <label for="gCv">CV数</label>
+            <input type="number" id="gCv" placeholder="例: 58">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Meta</h2>
+        <p class="section-desc">Metaは売上の代わりにROASを入力</p>
+      </div>
+
+      <div class="channel-card">
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="mCost">広告費</label>
+            <input type="number" id="mCost" placeholder="例: 90000">
+          </div>
+          <div class="input-group">
+            <label for="mRoas">ROAS</label>
+            <input type="number" id="mRoas" step="0.01" placeholder="例: 3.20">
+          </div>
+          <div class="input-group">
+            <label for="mClicks">クリック数</label>
+            <input type="number" id="mClicks" placeholder="例: 6400">
+          </div>
+          <div class="input-group">
+            <label for="mImp">imp</label>
+            <input type="number" id="mImp" placeholder="例: 210000">
+          </div>
+          <div class="input-group">
+            <label for="mCv">CV数</label>
+            <input type="number" id="mCv" placeholder="例: 42">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>先週比較</h2>
+        <p class="section-desc">今週合算との比較用</p>
+      </div>
+
+      <div class="channel-card">
+        <div class="input-grid comparison-grid">
+          <div class="input-group">
+            <label for="prevCost">先週 広告費</label>
+            <input type="number" id="prevCost" placeholder="例: 210000">
+          </div>
+          <div class="input-group">
+            <label for="prevSales">先週 売上</label>
+            <input type="number" id="prevSales" placeholder="例: 1100000">
+          </div>
+          <div class="input-group">
+            <label for="prevClicks">先週 クリック数</label>
+            <input type="number" id="prevClicks" placeholder="例: 13800">
+          </div>
+          <div class="input-group">
+            <label for="prevImp">先週 imp</label>
+            <input type="number" id="prevImp" placeholder="例: 360000">
+          </div>
+          <div class="input-group">
+            <label for="prevCv">先週 CV数</label>
+            <input type="number" id="prevCv" placeholder="例: 95">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="action-row">
+      <button id="analyzeBtn">分析する</button>
+    </div>
+
+    <section class="section report-section">
+      <div class="section-head">
+        <h2>媒体別サマリー</h2>
+        <p class="section-desc">スクショしてそのまま使える表示</p>
+      </div>
+      <div id="result" class="cards-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>先週比</h2>
+      </div>
+      <div id="comparisonCards" class="cards-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>総評</h2>
+      </div>
+      <div id="summary" class="summary-text">ここに総評が表示されます。</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>施策メモ</h2>
+      </div>
+      <textarea
+        id="memo"
+        class="memo-input"
+        placeholder="施策メモを入力してください。例：Metaのクリエイティブ差し替え / Googleの指名除外見直し / LPのFV改善 など"
+      ></textarea>
+      <div id="memoDisplay" class="memo-display">施策メモはまだありません。</div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
